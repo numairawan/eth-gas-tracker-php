@@ -1,0 +1,22 @@
+{
+    "name": "numairawan/eth-gas-tracker-php",
+    "description": "Powerful PHP library to retrieve live Ethereum gas prices.",
+    "type": "library",
+    "keywords": ["ethereum", "eth-gas-station", "ethereum-gas-prices", "ethereum-gasprice", "eth-gas-api", "ethereum-gas-tracker", "ethereum-gas-api"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Numair Awan",
+            "email": "numairawan1@gmail.com",
+            "homepage": "https://github.com/NumairAwan"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "NumairAwan\\EthGasTracker\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
