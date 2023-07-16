@@ -1,6 +1,6 @@
 <?php
 
-namespace NumairAwan\EthereumGasTracker;
+namespace NumairAwan\EthGasTracker;
 
 /**
  * EthereumGasPrice class for retrieving live Ethereum gas prices.
