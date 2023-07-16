@@ -34,14 +34,17 @@ To retrieve live Ethereum gas prices, follow these simple steps:
 use NumairAwan\EthGasTracker\EthereumGasPrice;
 
 // Instantiate the EthereumGasPrice
-$gasPrice = new EthereumGasPrice();
+$ethereumGasPrice = new EthereumGasPrice();
+
+// Get gas prices
+$gasPrice = $ethereumGasPrice->getGasPrices();
 
 // Display the gas prices
 echo "Gas Prices:\n";
 echo "Safe Gas Price: " . $gasPrice->safeGas . " Gwei\n";
 
 // Get gas prices as an associative array
-$pricesArray = $gasPrice->toArray();
+$pricesArray = $ethereumGasPrice->toArray();
 
 // Gas prices in array
 echo "Fast Gas Price: " . $pricesArray['fastGas'] . " Gwei\n";
@@ -51,11 +54,11 @@ echo "Fast Gas Price: " . $pricesArray['fastGas'] . " Gwei\n";
 
 ```php
 // Convert gas prices to Wei
-$fastGasPriceWei = $gasPrice->toWei($gasPrice->fastGas);
+$fastGasPriceWei = $ethereumGasPrice->toWei($gasPrice->fastGas);
 echo "Fast Gas Price (Wei): " . $fastGasPriceWei . PHP_EOL;
 
 // Convert gas prices to Hexadecimal with '0x' prefix (don't pass second parameter to just get hex)
-$proposeGasPriceHex = $gasPrice->toHex($gasPrice->proposeGas, true);
+$proposeGasPriceHex = $ethereumGasPrice->toHex($gasPrice->proposeGas, true);
 echo "Propose Gas Price (Hex): " . $proposeGasPriceHex . PHP_EOL;
 ```
 
