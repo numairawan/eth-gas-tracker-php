@@ -39,15 +39,11 @@ $ethereumGasPrice = new EthereumGasPrice();
 // Get gas prices
 $gasPrice = $ethereumGasPrice->getGasPrices();
 
-// Display the gas prices
+// safe gas price 
 echo "Gas Prices:\n";
+echo "Slow Gas Price: " . $gasPrice->proposeGas . " Gwei\n";
 echo "Safe Gas Price: " . $gasPrice->safeGas . " Gwei\n";
-
-// Get gas prices as an associative array
-$pricesArray = $ethereumGasPrice->toArray();
-
-// Gas prices in array
-echo "Fast Gas Price: " . $pricesArray['fastGas'] . " Gwei\n";
+echo "Fast Gas Price: " . $gasPrice->fastGas . " Gwei\n";
 ```
 
 #### `Utilities`
