@@ -7,16 +7,6 @@ namespace NumairAwan\EthGasTracker;
  */
 class EthereumGasPrice
 {
-    private $gasPrices;
-
-    /**
-     * Constructor method. Fetches gas prices from the API.
-     */
-    public function __construct()
-    {
-        $this->fetchGasPrices();
-    }
-
     /**
      * Convert a gas price from Gwei to Wei.
      *
@@ -47,16 +37,6 @@ class EthereumGasPrice
     }
 
     /**
-     * Returns the gas prices as an associative array.
-     *
-     * @return array
-     */
-    public function toArray()
-    {
-        return json_decode(json_encode($this->gasPrices), true);
-    }
-
-    /**
      * Fetch gas prices from the API.
      */
     private function fetchGasPrices()
@@ -77,8 +57,10 @@ class EthereumGasPrice
         if ($this->isValidJson($etherScanGas)) {
 
             $gasPrices = json_decode($etherScanGas);
-            $this->gasPrices = $gasPrices;
-        }
+            return $gasPrices;
+        } 
+
+        return false;
     }
 
     /**
@@ -88,7 +70,7 @@ class EthereumGasPrice
      */
     public function getGasPrices()
     {
-        return $this->gasPrices;
+        return $this->fetchGasPrices();
     }
 
     /**
