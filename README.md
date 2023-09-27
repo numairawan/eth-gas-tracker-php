@@ -54,8 +54,8 @@ $fastGasPriceWei = $ethereumGasPrice->toWei($gasPrice->fastGas);
 echo "Fast Gas Price (Wei): " . $fastGasPriceWei . PHP_EOL;
 
 // Convert gas prices (WEI) to Hexadecimal with '0x' prefix (don't pass second parameter to just get hex)
-$proposeGasPriceHex = $ethereumGasPrice->toHex($fastGasPriceWei, true);
-echo "Propose Gas Price (Hex): " . $proposeGasPriceHex . PHP_EOL;
+$fastGasPriceHex = $ethereumGasPrice->toHex($fastGasPriceWei, true);
+echo "Fast Gas Price (Hex): " . $fastGasPriceHex . PHP_EOL;
 ```
 
 ### Contributing
